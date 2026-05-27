@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory Ledger</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Inventory Ledger</h1>
+        <p>Record stock entries, view history, and inspect a weekly summary.</p>
+      </header>
+
+      <section class="panel">
+        <h2>Add Stock Entry</h2>
+        <form id="entry-form">
+          <div class="field-row">
+            <label for="warehouse_id">Warehouse ID</label>
+            <input
+              id="warehouse_id"
+              name="warehouse_id"
+              required
+              placeholder="WH-123"
+            />
+          </div>
+          <div class="field-row">
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+              <option value="">Select category</option>
+              <option>Electronics</option>
+              <option>Textiles</option>
+              <option>Chemicals</option>
+              <option>Furniture</option>
+              <option>Pharma</option>
+            </select>
+          </div>
+          <div class="field-row">
+            <label for="item_name">Item Name</label>
+            <input
+              id="item_name"
+              name="item_name"
+              required
+              placeholder="Item name"
+            />
+          </div>
+          <div class="field-row">
+            <label for="week_number">Week Number</label>
+            <input
+              id="week_number"
+              name="week_number"
+              type="number"
+              min="1"
+              max="52"
+              required
+            />
+          </div>
+          <div class="field-row">
+            <label for="quantity">Quantity</label>
+            <input
+              id="quantity"
+              name="quantity"
+              type="number"
+              min="0"
+              required
+            />
+          </div>
+          <div class="field-row">
+            <label for="unit">Unit</label>
+            <select id="unit" name="unit" required>
+              <option value="">Select unit</option>
+              <option>units</option>
+              <option>kg</option>
+              <option>litres</option>
+            </select>
+          </div>
+          <div class="field-row">
+            <label for="recorded_by">Recorded By</label>
+            <input
+              id="recorded_by"
+              name="recorded_by"
+              required
+              placeholder="Your name"
+            />
+          </div>
+          <div class="actions">
+            <button type="submit">Save Entry</button>
+          </div>
+        </form>
+        <div id="message" class="message"></div>
+      </section>
+
+      <section class="panel">
+        <div class="toolbar">
+          <h2>Entries</h2>
+          <div class="filter-group">
+            <label for="filter-category">Filter by category</label>
+            <select id="filter-category">
+              <option value="">All</option>
+              <option>Electronics</option>
+              <option>Textiles</option>
+              <option>Chemicals</option>
+              <option>Furniture</option>
+              <option>Pharma</option>
+            </select>
+            <button id="load-entries">Reload</button>
+          </div>
+        </div>
+        <div class="table-wrapper">
+          <table id="entries-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Warehouse</th>
+                <th>Category</th>
+                <th>Item</th>
+                <th>Week</th>
+                <th>Qty</th>
+                <th>Unit</th>
+                <th>Recorded By</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="toolbar">
+          <h2>Weekly Summary</h2>
+          <button id="load-summary">Refresh Summary</button>
+        </div>
+        <div class="table-wrapper">
+          <table id="summary-table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Week</th>
+                <th>Total Qty</th>
+                <th>Entry Count</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

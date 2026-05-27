@@ -1,0 +1,20 @@
+{
+  "name": "inventory-ledger-api",
+  "version": "1.0.0",
+  "main": "app/index.js",
+  "scripts": {
+    "start": "node app/index.js",
+    "dev": "nodemon app/index.js",
+    "test": "jest --runInBand"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "joi": "^17.13.1",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0",
+    "nodemon": "^3.1.10"
+  }
+}
