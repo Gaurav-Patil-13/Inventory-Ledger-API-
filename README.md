@@ -1,32 +1,43 @@
 # Inventory Ledger API
 
-## Install
+# Install Dependencies
 
+Run this command in the project root directory:
+
+```bash
 npm install
+```
+# Run Application
 
-## Run Server
+Development Mode:
 
+```bash
 npm run dev
+```
 
-## Run Tests
 
-npm test
+# Server URL
 
-## Database Linking
+Application runs on:
 
-Database file:
-inventory.db
+```text
+http://localhost:3000
+```
 
-Connection setup:
-app/database.js
+Frontend UI:
 
-Flow:
-Client -> Express Route -> Joi Validation -> SQLite -> Response
+```text
+http://localhost:3000
+```
 
-## Frontend UI
+Entries API:
 
-A browser UI is now available from the same server.
+```text
+http://localhost:3000/entries
+```
 
-- Start the server with `npm run dev`
-- Open `http://localhost:3000`
-- Add entries, filter by category, view the weekly summary, and delete entries from the interface.
+Summary API:
+
+```text
+http://localhost:3000/summary
+```
